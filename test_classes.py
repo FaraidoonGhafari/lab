@@ -53,24 +53,22 @@ class Test:
         self.tv.power()
         self.tv.volume_up()
         assert self.tv.__str__() == 'TV status: Is on = True, Channel = 0, Volume = 1'
-        self.tv.channel_down()
         self.tv.volume_up()
-        assert self.tv.__str__() == 'TV status: Is on = True, Channel = 3, Volume = 2'
+        assert self.tv.__str__() == 'TV status: Is on = True, Channel = 0, Volume = 2'
         self.tv.volume_up()
         self.tv.volume_up()
-        assert self.tv.__str__() == 'TV status: Is on = True, Channel = 3, Volume = 2'
+        assert self.tv.__str__() == 'TV status: Is on = True, Channel = 0, Volume = 2'
 
     def test_volume_down(self):
         assert self.tv.__str__() == 'TV status: Is on = False, Channel = 0, Volume = 0'
         self.tv.power()
         self.tv.volume_down()
         assert self.tv.__str__() == 'TV status: Is on = True, Channel = 0, Volume = 0'
-        self.tv.channel_up()
         self.tv.volume_up()
         self.tv.volume_up()
-        assert self.tv.__str__() == 'TV status: Is on = True, Channel = 1, Volume = 2'
+        assert self.tv.__str__() == 'TV status: Is on = True, Channel = 0, Volume = 2'
         self.tv.volume_down()
-        assert self.tv.__str__() == 'TV status: Is on = True, Channel = 1, Volume = 1'
+        assert self.tv.__str__() == 'TV status: Is on = True, Channel = 0, Volume = 1'
 
 
 
